@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     
-    // Full Pyramid v2
+    // 10. Full Pyramid v2
     int N = 5;
     for(int row=0; row<N; row++){
         // Spaces
@@ -16,7 +16,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Inverted Full Pyramid
+    // 11. Inverted Full Pyramid
     N=4;
     for(int row=0; row<N; row++){
         // Spaces
@@ -29,7 +29,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Diamond Pattern
+    // 12. Diamond Pattern
     N=5;
     for(int row=0; row<N; row++){
         // Spaces
@@ -51,7 +51,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Baseless Hollow Pyramid
+    // 13. Baseless Hollow Pyramid
     N = 4;
     for(int row=0; row<N; row++){
         for(int col=0; col<N-row-1; col++)
@@ -66,7 +66,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Inverted Baseless Hollow Pyramid
+    // 14. Inverted Baseless Hollow Pyramid
     N = 4;
     for(int row=0; row<N; row++){
         // Spaces
@@ -83,7 +83,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Hollow Diamond - (Homework Question)
+    // 15. Hollow Diamond - (Homework Question)
     N = 4;
     for(int row=0; row<N; row++){
         for(int col=0; col<N-row-1; col++)
@@ -111,7 +111,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Diamond Using Spaces.
+    // 16. Diamond Using Spaces
     N=4;
     for(int row=0; row<N; row++){
         // Left star pattern.
@@ -139,7 +139,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Star - Number Pattern
+    // 17. Star - Number Pattern
     N = 5;
     for(int row=0; row<N; row++){
         for(int col=0; col<2*row+1; col++){
@@ -161,7 +161,7 @@ int main(){
     }
     cout << endl << endl;
 
-    // Hollow Inverted Half Pyramid
+    // 18. Hollow Inverted Half Pyramid
     N = 6;
     for(int row=0; row<N; row++){
         for(int col=0; col<N-row; col++){
@@ -169,6 +169,86 @@ int main(){
                 cout << "* ";
             else
                 cout << "  ";
+        }
+        cout << endl;
+    }
+    cout << endl << endl;
+
+    // 19. Hollow Number Pyramid
+    N=5;
+    int space;
+    for(int row=0; row<N; row++){
+        if (row!=0 && row!=N-1)
+            space = row;
+        else
+            space=0;
+        for(int col=0; col<row+1+space; col++){
+            // Last Row
+            if(row==N-1)
+                cout << col+1;
+            else{
+                // First column
+                if(col==0){
+                    cout << 1;
+                    continue;
+                }
+                // Spaces
+                if(space!=0){
+                    cout << " ";
+                    space -= 1;
+                }
+                // Last Column
+                if(col==row+space){
+                    cout << row+1;
+                }
+            }
+        }
+        cout << endl;
+    }
+    cout << endl << endl;
+
+    // 20. Alphabet Palindrome Pyramid
+    N=5;
+    for(int row=0; row<N; row++){
+        for(int col=0; col<row+1; col++){
+            char ch = 'A';
+            cout << char(ch + col);
+        }
+        char ch = 'A'+row-1;
+        for(int col=0; col<row; col++){
+            cout << ch;
+            ch = char(ch-1);
+        }
+        cout << endl;
+    }
+    cout << endl << endl;
+
+    // 21. Numeric Hollow Inverted Half Pyramid
+    N=5;
+    for(int row=0; row<N; row++){
+        for(int col=0; col<N-row; col++){
+            if(col!=0 && col!=N-row-1 && row!=0)
+                cout << " ";
+            else
+                cout << row+col+1;
+        }
+        cout << endl;
+    }
+
+    // 22. Numeric Palindrome Equilateral Pyramid 
+    N = 5;
+    for(int row=0; row<N; row++){
+        // Spaces
+        for(int col=0; col<N-row; col++){
+            cout << " ";
+        }
+        // 1, 12, 123, 1234....
+        for(int col=0; col<row+1; col++){
+            cout << col+1;
+        }
+        // 1, 21, 321, 4321....
+        for(int col=0; col<row; col++){
+            cout << row-col;
         }
         cout << endl;
     }
