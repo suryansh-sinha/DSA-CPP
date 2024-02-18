@@ -234,6 +234,7 @@ int main(){
         }
         cout << endl;
     }
+    cout << endl << endl;
 
     // 22. Numeric Palindrome Equilateral Pyramid 
     N = 5;
