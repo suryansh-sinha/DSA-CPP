@@ -254,5 +254,73 @@ int main(){
     }
     cout << endl << endl;
 
+    // 23. Fancy Pattern #1
+    N = 5;
+    for(int row=0; row<N; row++){
+        // Stars
+        for(int col=0; col<2*N-row-2; col++){
+            cout << "* ";
+        }
+        // Number Star Pattern
+        for(int col=0; col<2*row+1; col++){
+            if(col%2 == 0)
+                cout << row+1 << " ";
+            else
+                cout << "* ";
+        }
+        // Stars
+        for(int col=0; col<2*N-row-2; col++){
+            cout << "* ";
+        }
+        cout << endl;
+    }
+    cout << endl << endl;
+
+    // 24. Solid Half Diamond
+    N = 4;
+    for(int row=0; row<N; row++){
+        for(int col=0; col<row+1; col++)
+            cout << "* ";
+        cout << endl;
+    }
+    for(int row=0; row<N; row++){
+        for(int col=0; col<N-row-1; col++)
+            cout << "* ";
+        cout << endl;
+    }
+    cout << endl << endl;
+
+    // 25. Floyd's Triangle
+    N = 6;
+    int num=1;
+    for(int row=0; row<N; row++){
+        for(int col=0; col<row+1; col++){
+            cout << num++ << " "    ;
+        }
+        cout << endl;
+    }
+    cout << endl << endl;
+
+    // 26. Butterfly Pattern
+    N = 4;
+    for(int row=0; row<N; row++){
+        for(int col=0; col<row+1; col++)
+            cout << "* ";
+        for(int col=0; col<2*N-2*row-2; col++)
+            cout << "  ";
+        for(int col=0; col<row+1; col++)
+            cout << "* ";
+        cout << endl;
+    }
+    for(int row=0; row<N; row++){
+        for(int col=0; col<N-row; col++)
+            cout << "* ";
+        for(int col=0; col<2*row; col++)
+            cout << "  ";
+        for(int col=0; col<N-row; col++)
+            cout << "* ";
+        cout << endl;
+    }
+
     return 0;
 }
