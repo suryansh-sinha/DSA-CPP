@@ -323,5 +323,34 @@ int main(){
         cout << endl;
     }
 
+    // 27. Fancy Pattern 2
+    N = 4;
+    int c = 1;
+    for(int row=0; row<N; row++){
+        for(int col=0; col<2*row+1; col++){
+            if(col%2!=0)
+                cout << "*";
+            else
+                cout << c++;
+        }
+        cout << endl;
+    }
+    int start = c-N;
+    for(int row=0; row<N; row++){
+        int k = start;
+        for(int col=0; col<N-row-1; col++){
+            if(col%2!=0)
+                cout << "*";
+            else
+                cout << k++;
+        }
+        start = start - (N-i-1);
+    }
+
+    // 28. Fancy Pattern 3
+
+    // 29. Pascal's Triangle
+
+
     return 0;
 }
