@@ -322,35 +322,61 @@ int main(){
             cout << "* ";
         cout << endl;
     }
+    cout << endl << endl;
 
-    // 27. Fancy Pattern 2
+    // 27. Fancy Pattern 2 --> Important
     N = 4;
     int c = 1;
     for(int row=0; row<N; row++){
         for(int col=0; col<2*row+1; col++){
             if(col%2!=0)
-                cout << "*";
+                cout << "* ";
             else
-                cout << c++;
+                cout << c++ << " ";
         }
         cout << endl;
     }
     int start = c-N;
     for(int row=0; row<N; row++){
         int k = start;
-        for(int col=0; col<N-row-1; col++){
+        for(int col=0; col<2*N-2*row-1; col++){
             if(col%2!=0)
-                cout << "*";
+                cout << "* ";
             else
-                cout << k++;
+                cout << k++ << " ";
         }
-        start = start - (N-i-1);
+        start = start - (N-row-1);
+        cout << endl;
     }
+    cout << endl << endl;
 
     // 28. Fancy Pattern 3
+    N = 7;
+    cout << "*" << endl;
+    for(int row=0; row<N; row++){
+        cout << "*";
+        int cond = row<N/2+1 ? 2*row+1 : 2*(N-row-1);
+        for(int col=0; col<cond; col++){
+            if(col<=cond/2)
+                cout << col+1;
+            else
+                cout << cond-col;
+        }
+        cout << "*" << endl;
+    }
+    cout << "*" << endl << endl;
 
     // 29. Pascal's Triangle
-
+    N = 7;
+    for(int row=1; row<=N; row++){
+        int C = 1;
+        for(int col=1; col<=row; col++){
+            cout << C << " ";
+            C = C*(row-col)/col;
+        }
+        cout << endl;
+    }
+    cout << endl << endl;
 
     return 0;
 }
